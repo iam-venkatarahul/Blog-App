@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title%}
+My Blog
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "blog/index.css"%}" />
+{% endblock %}
+
+
+{% block content %}
+<section id = "welcome">
+    <header>
+        <img src="{% static "blog/images/rahul-img.jpg" %}"></img>
+        <h2>Rahul's Blog</h2>
+    </header>
+    <p>Hello this is Venkata Rahul</p>
+</section>
+
+
+<section id = "latest-posts">
+    <h2>My thoughts</h2>
+    <ul>
+        {% for post in posts %}
+            {% include "blog/includes/post.html" %}
+        {% endfor %}
+    </ul>
+</section>
+
+
+<section id="about">
+    <h2>About Me</h2>
+    <p> Hey there! I'm Rahul, a Computer Science undergrad from the vibrant city of Vizag. I’m passionate about all things tech—whether it’s coding up cool projects, exploring new technologies, or diving deep into how things work under the hood.
+        This blog is my little corner of the internet where I share my thoughts, experiments, and learnings as I navigate through my CSE journey. From programming tips and project breakdowns to random tech musings and personal growth stories—expect a bit of everything.
+        I believe learning is best when shared, so if you find something useful here, that’s a win! Thanks for stopping by, and feel free to connect or drop a comment—I'm always up for a good tech chat.</p>
+</section>
+{% endblock %}
